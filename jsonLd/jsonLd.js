@@ -53,8 +53,171 @@
 ]
 </script>
 
+ /*  Nieuwsartikel detail OK checked*/
+<script type="application/ld+json">
+ {
+   "@context": "http://schema.org",
+   "@type": "WebPage",
+   "name": "[title pagina]",
+   "url": "[url van de pagina]",
+   "description": "[TagLine]",
+   "publisher": "Vlaamse overheid",
+   // Broodkruimel
+   "breadcrumb":{
+     "@type":"BreadcrumbList",
+     "itemListElement":
+     [
+       {
+         "@type":"ListItem",
+         "position":"1",
+         "item":{
+           "@type":"WebSite",
+           "@id":"https://[URL van huidige pagina]",
+           "name":"[page title]"
+           }
+         },
+         {
+          "@type":"ListItem",
+          "position":"2",
+          "item":{
+            "@type":"WebPage",
+            "@id":"https://[URL van pagina op niveau 1]",
+            "name":"[page title]"
+            }
+         },
+         {
+           // broodkruimeltussenniveau's if any
+         },
+         {
+           "@type":"ListItem",
+           "position":"[n]",
+           "item":{
+             "@type":"WebPage",
+             "@id":"https://[URL van pagina op niveau n]",
+             "name":"[page title]"
+             }
+           }
+     ]
+    },
+    // Content van newsartikel 
+    "mainEntity": 
+    {
+      "@type": "newsArticle",
+      "@id":"https://[]/idVanArtikel",
+      "author": "Vlaamse overheid",
+      "mainEntityOfPage": "https://[de url van de pagina waar dit artikel op staat]",
+      "headline": "[title]",
+      "articleBody": "Paste the whole mess of the article in here",
+      "image": {
+        "@type": "imageObject",
+        "url": "https://[link naar image van nieuwsartikel]",
+        // te checke op aspect ratio
+        "height": "500",
+        "width": "300"
+        },
+      "datePublished": "[publicatie datum]",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vlaamse overheid",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://[link naar logo vlaamse overheid in png, gif of jpeg]"
+          } 
+        }
+    }
 
-/* Persoverzicht */
+ }
+ </script>
+
+/* Vacature detail */
+<script type="application/ld+json">
+ {
+   "@context": "http://schema.org",
+   "@type": "WebPage",
+   "name": "[title tag pagina]",
+   "url": "[url van de pagina]",
+   "description": "[TagLine]",
+   "publisher": "Vlaamse overheid",
+   // Broodkruimel
+   "breadcrumb":{
+     "@type":"BreadcrumbList",
+     "itemListElement":[{
+         "@type":"ListItem",
+         "position":"1",
+         "item":{
+           "@type":"WebSite",
+           "@id":"https://[URL van huidige pagina]",
+           "name":"[page title]"
+           }
+         },
+         {
+         "@type":"ListItem",
+         "position":"2",
+         "item":{
+           "@type":"WebPage",
+           "@id":"https://[URL van pagina op niveau 1]",
+           "name":"[page title]"
+           }
+         },
+         {
+           // ...
+         },
+         {
+           "@type":"ListItem",
+           "position":"[n]",
+           "item":{
+             "@type":"WebPage",
+             "@id":"https://[URL van pagina op niveau n]",
+             "name":"[page title]"
+             }
+           }
+     ]},
+    // Content van vacature zelf
+    "mainEntity": 
+      {
+        "@type" : "JobPosting",
+        "title" : "Software Engineer",
+        "description" : "<p>Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.</p>",
+
+        "datePosted" : "2017-01-18",
+        "validThrough" : "2017-03-18T00:00",
+        "employmentType" : "CONTRACTOR",
+        "hiringOrganization" : {
+          "@type" : "Organization",
+          "name" : "Google",
+          "sameAs" : "http://www.google.com",
+          "logo" : "http://www.example.com/images/logo.png"
+        },
+        "jobLocation": {
+        "@type": "Place",
+          "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1600 Amphitheatre Pkwy",
+          "addressLocality": ", Mountain View",
+          "addressRegion": "CA",
+          "postalCode": "94043",
+          "addressCountry": "US"
+          }
+        }
+      }
+
+ }
+ </script>
+
+
+/* Persbericht detail */
+
+/* Publicatie detail */
+
+/* Product detail */
+
+/* Organisation detail */
+
+/* Erkende opleiding detil*/
+
+/* Beslissing Vlaamse Regering detail*/
+
+
 
 
 /* Organisations hub */
@@ -104,7 +267,7 @@
  }
  </script>
 
- /*  Collecties */
+ /*  Collectiepagina's */
  <script type="application/ld+json">
  {
    "@context": "http://schema.org",
@@ -151,82 +314,8 @@
  }
  </script>
 
- /*  Nieuwsartikel */
- <script type="application/ld+json">
- {
-   "@context": "http://schema.org",
-   "@type": "WebPage",
-   "name": "[title tag pagina]",
-   "url": "[url van de pagina]",
-   "description": "[TagLine]",
-   "publisher": "Vlaamse overheid",
-   // Broodkruimel
-   "breadcrumb":{
-     "@type":"BreadcrumbList",
-     "itemListElement":
-     [
-       {
-         "@type":"ListItem",
-         "position":"1",
-         "item":{
-           "@type":"WebSite",
-           "@id":"https://[URL van huidige pagina]",
-           "name":"[page title]"
-           }
-         },
-         {
-          "@type":"ListItem",
-          "position":"2",
-          "item":{
-            "@type":"WebPage",
-            "@id":"https://[URL van pagina op niveau 1]",
-            "name":"[page title]"
-            }
-         },
-         {
-           // alle nivea's
-         },
-         {
-           "@type":"ListItem",
-           "position":"[n]",
-           "item":{
-             "@type":"WebPage",
-             "@id":"https://[URL van pagina op niveau n]",
-             "name":"[page title]"
-             }
-           }
-     ]
-    },
-    // Content van artikel zelf
-    "mainEntity": 
-    {
-      "@type": "newsArticle",
-      "@id": "https://[]",
-      "author": "Vlaamse overheid 0",
-      "headline": "[title]",
-      "articleBody": "Paste the whole mess of code in here",
-      "image": {
-        "@type": "imageObject",
-        "url": "https://[link naar image van nieuwsartikel]",
-        "height": "500",
-        "width": "300"
-        },
-      "datePublished": "[publication date]",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Vlaamse overheid 1",
-        "logo": {
-          "@type": "imageObject",
-          "url": "httpS://[link naar logo vlaamse overheid in png, gif of jpeg]"
-          } 
-        },
-      "mainEntityOfPage": "[]",
-    }
-
- }
- </script>
  
-/* Topic page, journey, stories, articles */
+/* Pagina's met story block: topic sub page, journey, story, article */
  <script type="application/ld+json">
  {
    "@context": "http://schema.org",
@@ -323,77 +412,3 @@
  </script>
 
 
-/* job posting */
-<script type="application/ld+json">
- {
-   "@context": "http://schema.org",
-   "@type": "WebPage",
-   "name": "[title tag pagina]",
-   "url": "[url van de pagina]",
-   "description": "[TagLine]",
-   "publisher": "Vlaamse overheid",
-   // Broodkruimel
-   "breadcrumb":{
-     "@type":"BreadcrumbList",
-     "itemListElement":[{
-         "@type":"ListItem",
-         "position":"1",
-         "item":{
-           "@type":"WebSite",
-           "@id":"https://[URL van huidige pagina]",
-           "name":"[page title]"
-           }
-         },
-         {
-         "@type":"ListItem",
-         "position":"2",
-         "item":{
-           "@type":"WebPage",
-           "@id":"https://[URL van pagina op niveau 1]",
-           "name":"[page title]"
-           }
-         },
-         {
-           // ...
-         },
-         {
-           "@type":"ListItem",
-           "position":"[n]",
-           "item":{
-             "@type":"WebPage",
-             "@id":"https://[URL van pagina op niveau n]",
-             "name":"[page title]"
-             }
-           }
-     ]},
-    // Content van vacature zelf
-    "mainEntity": 
-      {
-        "@type" : "JobPosting",
-        "title" : "Software Engineer",
-        "description" : "<p>Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.</p>",
-
-        "datePosted" : "2017-01-18",
-        "validThrough" : "2017-03-18T00:00",
-        "employmentType" : "CONTRACTOR",
-        "hiringOrganization" : {
-          "@type" : "Organization",
-          "name" : "Google",
-          "sameAs" : "http://www.google.com",
-          "logo" : "http://www.example.com/images/logo.png"
-        },
-        "jobLocation": {
-        "@type": "Place",
-          "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1600 Amphitheatre Pkwy",
-          "addressLocality": ", Mountain View",
-          "addressRegion": "CA",
-          "postalCode": "94043",
-          "addressCountry": "US"
-          }
-        }
-      }
-
- }
- </script>

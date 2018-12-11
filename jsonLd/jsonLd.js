@@ -1,5 +1,5 @@
 
-/* HOME */
+/* HOME OK */
 <script type="application/ld+json">
 [
   { 
@@ -8,7 +8,8 @@
     "url": "https://www.vlaanderen.be/", 
     "name": "Vlaanderen.be, de officiële website van de Vlaamse overheid",
     "description": "Vlaanderen.be, uw bron voor diensten en informatie van de Vlaamse overheid",
-    "publisher": "Informatie Vlaanderen"
+    "publisher": "Informatie Vlaanderen",
+    "inLanguage":"BE-NL"
 
     /*** Zoekblok - deze blok toevoegen van zodra we een zoek op vlaanderen hebben
     "potentialAction": { 
@@ -53,7 +54,7 @@
 ]
 </script>
 
- /*  Nieuwsartikel detail OK checked*/
+ /*  Nieuwsartikel detail OK */
 <script type="application/ld+json">
  {
    "@context": "http://schema.org",
@@ -62,6 +63,8 @@
    "url": "[url van de pagina]",
    "description": "[TagLine]",
    "publisher": "Vlaamse overheid",
+   "inLanguage":"BE-NL",
+   
    // Broodkruimel
    "breadcrumb":{
      "@type":"BreadcrumbList",
@@ -107,11 +110,12 @@
       "author": "Vlaamse overheid",
       "mainEntityOfPage": "https://[de url van de pagina waar dit artikel op staat]",
       "headline": "[title]",
-      "articleBody": "Paste the whole mess of the article in here",
+      "articleBody": "[Paste the whole mess of the article in here]",
+      // if an image present
       "image": {
         "@type": "imageObject",
         "url": "https://[link naar image van nieuwsartikel]",
-        // te checke op aspect ratio
+        // te checken op aspect ratio
         "height": "500",
         "width": "300"
         },
@@ -129,15 +133,16 @@
  }
  </script>
 
-/* Vacature detail */
+/* Vacature detail OK */
 <script type="application/ld+json">
  {
    "@context": "http://schema.org",
    "@type": "WebPage",
-   "name": "[title tag pagina]",
+   "name": "[title pagina]",
    "url": "[url van de pagina]",
    "description": "[TagLine]",
    "publisher": "Vlaamse overheid",
+   "inLanguage":"BE-NL",
    // Broodkruimel
    "breadcrumb":{
      "@type":"BreadcrumbList",
@@ -176,38 +181,191 @@
     "mainEntity": 
       {
         "@type" : "JobPosting",
-        "title" : "Software Engineer",
-        "description" : "<p>Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.</p>",
-
-        "datePosted" : "2017-01-18",
-        "validThrough" : "2017-03-18T00:00",
-        "employmentType" : "CONTRACTOR",
+        "mainEntityOfPage": "[job:link]",
+        "title" : "[job:title]",
+        "description" : "[job:jobdescription]",
+        "qualification:": "[job:profile]",
+        "datePosted" : "[job:publicationDate]",
+        "validThrough" : "[job:validThrough]",
+        "employmentType" : "[job:fulltime]",
+        "educationRequirements": "[job:applicatioInfo:degrees]",
+        "experienceRequirements": "[job:applicatioInfo:experience]",
         "hiringOrganization" : {
           "@type" : "Organization",
-          "name" : "Google",
-          "sameAs" : "http://www.google.com",
-          "logo" : "http://www.example.com/images/logo.png"
+          "name" : "[jobs:items:hiringOrganisation]"
+          //"sameAs" : "http://www.google.com",
+          //"logo" : "http://www.example.com/images/logo.png"
         },
         "jobLocation": {
         "@type": "Place",
           "address": {
           "@type": "PostalAddress",
-          "streetAddress": "1600 Amphitheatre Pkwy",
-          "addressLocality": ", Mountain View",
-          "addressRegion": "CA",
-          "postalCode": "94043",
-          "addressCountry": "US"
+          "streetAddress": "[job:applicatioInfo:address]",
+          "addressLocality": "[job:applicatioInfo:city]",
+          "postalCode": "[job:applicatioInfo:zipCode]",
+          "addressCountry": "[job:applicatioInfo:country]"
           }
         }
       }
-
  }
  </script>
 
 
 /* Persbericht detail */
 
+<script type="application/ld+json">
+ {
+   "@context": "http://schema.org",
+   "@type": "WebPage",
+   "name": "[title pagina]",
+   "url": "[pressRelease:title]",
+   "description": "[TagLine]",
+   "publisher": "Vlaamse overheid",
+   "inLanguage":"BE-NL",
+   
+   // Broodkruimel
+   "breadcrumb":{
+     "@type":"BreadcrumbList",
+     "itemListElement":
+     [
+       {
+         "@type":"ListItem",
+         "position":"1",
+         "item":{
+           "@type":"WebSite",
+           "@id":"https://[URL van huidige pagina]",
+           "name":"[page title]"
+           }
+         },
+         {
+          "@type":"ListItem",
+          "position":"2",
+          "item":{
+            "@type":"WebPage",
+            "@id":"https://[URL van pagina op niveau 1]",
+            "name":"[page title]"
+            }
+         },
+         {
+           // broodkruimeltussenniveau's if any
+         },
+         {
+           "@type":"ListItem",
+           "position":"[n]",
+           "item":{
+             "@type":"WebPage",
+             "@id":"https://[URL van pagina op niveau n]",
+             "name":"[page title]"
+             }
+           }
+     ]
+    },
+    // Content van perbericht detail 
+    "mainEntity": 
+    {
+      "@type": "Article",
+      "@id":"https://[]/idVanArtikel",
+      "author": "Vlaamse overheid",
+      "mainEntityOfPage": "[pressRelease:link]",
+      "headline": "[pressRelease:title]",
+      "articleBody": "[pressRelease:pressRelease]",
+      // if an image present
+      "image": {
+        "@type": "imageObject",
+        "url": "https://[link naar image van nieuwsartikel]",
+        // te checken op aspect ratio
+        "height": "500",
+        "width": "300"
+        },
+      "datePublished": "[pressRelease:publicationDate]",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vlaamse overheid",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://[link naar logo vlaamse overheid in png, gif of jpeg]"
+          } 
+        }
+    }
+
+ }
+ </script>
+
 /* Publicatie detail */
+<script type="application/ld+json">
+ {
+   "@context": "http://schema.org",
+   "@type": "WebPage",
+   "name": "[publication:title]",
+   "url": "[url van page]",
+   "description": "[TagLine]",
+   "publisher": "Vlaamse overheid",
+   "inLanguage":"BE-NL",
+   
+   // Broodkruimel
+   "breadcrumb":{
+     "@type":"BreadcrumbList",
+     "itemListElement":
+     [
+       {
+         "@type":"ListItem",
+         "position":"1",
+         "item":{
+           "@type":"WebSite",
+           "@id":"https://[URL van huidige pagina]",
+           "name":"[page title]"
+           }
+         },
+         {
+          "@type":"ListItem",
+          "position":"2",
+          "item":{
+            "@type":"WebPage",
+            "@id":"https://[URL van pagina op niveau 1]",
+            "name":"[page title]"
+            }
+         },
+         {
+           // broodkruimeltussenniveau's if any
+         },
+         {
+           "@type":"ListItem",
+           "position":"[n]",
+           "item":{
+             "@type":"WebPage",
+             "@id":"https://[URL van pagina op niveau n]",
+             "name":"[page title]"
+             }
+           }
+     ]
+    },
+    // Content van publicatie detail 
+    "mainEntity": 
+    {
+      "@type": "Article",
+      "@id":"https://[]/idVanArtikel",
+      "author": "Vlaamse overheid",
+      "mainEntityOfPage": "[publication:link]",
+      "headline": "[publication:title]",
+      "articleBody": "[publication:abstract]",
+      // if an image present
+      "image": {
+        "@type": "imageObject",
+        "url": "publication:covers:thumbnailURL]",
+        // te checken op aspect ratio
+        "height": "500",
+        "width": "300"
+        },
+      "datePublished": "[publication:publicationDate]",
+      "publisher": {
+        "@type": "Organization",
+        "name": "publication:publisher"
+        }
+    }
+
+ }
+ </script>
+
 
 /* Product detail */
 
@@ -220,19 +378,27 @@
 
 
 
-/* Organisations hub */
+/* Organisations hub - home page OK */
 <script type="application/ld+json">
  {
    "@context": "http://schema.org",
    "@type": "WebPage",
-   "name": "[title tag pagina]",
+   "name": "[title pagina]",
    "url": "[url van de pagina]",
-   "description": "[TagLine]",
-   "publisher": "Vlaamse overheid",
+   "description": "[organisationhubs:items:intro]",
+   "publisher": "[organisationhubs:items:organisationhubType + title]",
+   "inLanguage":"BE-NL",
+   "significantLink": [
+     // hier de themeHighLights
+    "https://",
+    "https://"
+  ],
    // Broodkruimel
    "breadcrumb":{
      "@type":"BreadcrumbList",
-     "itemListElement":[{
+     "itemListElement":
+     [
+       {
          "@type":"ListItem",
          "position":"1",
          "item":{
@@ -242,16 +408,16 @@
            }
          },
          {
-         "@type":"ListItem",
-         "position":"2",
-         "item":{
-           "@type":"WebPage",
-           "@id":"https://[URL van pagina op niveau 1]",
-           "name":"[page title]"
-           }
+          "@type":"ListItem",
+          "position":"2",
+          "item":{
+            "@type":"WebPage",
+            "@id":"https://[URL van pagina op niveau 1]",
+            "name":"[page title]"
+            }
          },
          {
-           // ...
+           // broodkruimeltussenniveau's if any
          },
          {
            "@type":"ListItem",
@@ -262,10 +428,13 @@
              "name":"[page title]"
              }
            }
-     ]}
+     ]
+    }
 
  }
  </script>
+
+ /* Organisations hub - Contact */
 
  /*  Collectiepagina's */
  <script type="application/ld+json">
